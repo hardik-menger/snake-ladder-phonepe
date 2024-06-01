@@ -1,8 +1,9 @@
-package org.example.entity.actionelements;
+package org.example.entity.actionelements.impl;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.entity.Player;
+import org.example.entity.actionelements.ActionElement;
 
 @Data
 @NoArgsConstructor

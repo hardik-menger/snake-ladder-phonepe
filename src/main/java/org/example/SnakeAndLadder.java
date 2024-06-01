@@ -1,8 +1,13 @@
 package org.example;
 
+import lombok.Data;
 import org.example.config.GameConfig;
 import org.example.entity.Player;
-import org.example.entity.actionelements.*;
+import org.example.entity.actionelements.ActionElement;
+import org.example.entity.actionelements.impl.Crocodile;
+import org.example.entity.actionelements.impl.Ladder;
+import org.example.entity.actionelements.impl.Mine;
+import org.example.entity.actionelements.impl.Snake;
 import org.example.strategy.movementstrategy.MovementStrategyContext;
 import org.example.util.diceroller.DiceRoller;
 import org.example.util.diceroller.impl.RandomDiceRoller;
@@ -14,6 +19,7 @@ import java.util.Map;
 
 import static org.example.Constants.START_POSITION;
 
+@Data
 public class SnakeAndLadder {
 
     private final int boardSize;
@@ -24,7 +30,15 @@ public class SnakeAndLadder {
     public SnakeAndLadder(GameConfig config) throws IllegalArgumentException {
         this.boardSize = config.boardSize;
         this.diceRoller = new RandomDiceRoller(new MovementStrategyContext(config.movementStrategy), config.numberOfDies);
+        //use the diceRoller below to replicate the test cases mentioned in the document
         //this.diceRoller = new FakeDiceRoller();
+        this.players.addAll(config.players);
+        initializeBoardElements(config);
+    }
+
+    public SnakeAndLadder(GameConfig config, DiceRoller diceRoller) throws IllegalArgumentException {
+        this.boardSize = config.boardSize;
+        this.diceRoller = diceRoller;
         this.players.addAll(config.players);
         initializeBoardElements(config);
     }
@@ -53,7 +67,7 @@ public class SnakeAndLadder {
         }
     }
 
-    private void setNewPosition(Player player) {
+    public void setNewPosition(Player player) {
         int roll = diceRoller.rollDice();
         int oldPosition = player.getPosition();
         int newPosition = oldPosition + roll;
@@ -73,7 +87,7 @@ public class SnakeAndLadder {
         player.setPosition(newPosition);
     }
 
-    private void checkForPlayerCollision(Player currentPlayer) {
+    public void checkForPlayerCollision(Player currentPlayer) {
         for (Player player : players) {
             if (player != currentPlayer && player.getPosition() == currentPlayer.getPosition()) {
                 System.out.printf("%s collided with %s and is sent back to start%n", player.getName(), currentPlayer.getName());
