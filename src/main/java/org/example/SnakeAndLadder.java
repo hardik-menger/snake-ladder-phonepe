@@ -3,8 +3,8 @@ package org.example;
 import org.example.config.GameConfig;
 import org.example.entity.Player;
 import org.example.entity.actionelements.*;
+import org.example.util.diceroller.FakeDiceRoller;
 import org.example.util.diceroller.impl.DiceRoller;
-import org.example.util.diceroller.impl.FakeDiceRoller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
