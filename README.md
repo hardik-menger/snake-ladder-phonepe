@@ -61,7 +61,3 @@ rolling, and the initial positions of players.
 - **mines**: (Not used in the provided implementation) Specifies the positions of mines on the board.
 
 - **players**: Lists the players participating in the game along with their initial positions on the board.
-
-## Customization
-
-- Extend the game by adding new elements or modifying logic.
