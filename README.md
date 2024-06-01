@@ -13,7 +13,7 @@ This is a Java implementation of the classic Snake and Ladder game.
 
 Strategy Pattern
 
-- In our provided code, the Strategy Pattern is used in the MovementStrategy interface and its implementations (
+- Strategy Pattern is used in the MovementStrategy interface and its implementations (
   SumStrategy, MaxStrategy, MinStrategy)
 
 Dependency Injection
