@@ -3,7 +3,8 @@ package org.example;
 import org.example.config.GameConfig;
 import org.example.entity.Player;
 import org.example.entity.actionelements.*;
-import org.example.util.diceroller.FakeDiceRoller;
+import org.example.strategy.movementstrategy.MovementStrategyContext;
+import org.example.util.diceroller.RandomDiceRoller;
 import org.example.util.diceroller.impl.DiceRoller;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class SnakeAndLadder {
 
     public SnakeAndLadder(GameConfig config) throws IllegalArgumentException {
         this.boardSize = config.boardSize;
-        // this.diceRoller = new RandomDiceRoller(new MovementStrategyContext(config.movementStrategy), config.numberOfDies);
-        this.diceRoller = new FakeDiceRoller();
+        this.diceRoller = new RandomDiceRoller(new MovementStrategyContext(config.movementStrategy), config.numberOfDies);
+        //this.diceRoller = new FakeDiceRoller();
         this.players.addAll(config.players);
         initializeBoardElements(config);
     }
@@ -36,7 +37,6 @@ public class SnakeAndLadder {
     }
 
     public void playGame() {
-        //  Scanner scanner = new Scanner(System.in);
         boolean gameWon = false;
         while (!gameWon) {
             for (Player player : players) {
@@ -49,7 +49,6 @@ public class SnakeAndLadder {
                     }
                     checkForPlayerCollision(player);
                 }
-                //  scanner.nextLine();
             }
         }
     }
