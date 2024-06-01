@@ -1,6 +1,6 @@
-package org.example.util.diceroller;
+package org.example.util.diceroller.impl;
 
-import org.example.util.diceroller.impl.DiceRoller;
+import org.example.util.diceroller.DiceRoller;
 
 public class FakeDiceRoller implements DiceRoller {
     int[] diceRolls = {

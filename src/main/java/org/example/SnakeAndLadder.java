@@ -4,8 +4,8 @@ import org.example.config.GameConfig;
 import org.example.entity.Player;
 import org.example.entity.actionelements.*;
 import org.example.strategy.movementstrategy.MovementStrategyContext;
-import org.example.util.diceroller.RandomDiceRoller;
-import org.example.util.diceroller.impl.DiceRoller;
+import org.example.util.diceroller.DiceRoller;
+import org.example.util.diceroller.impl.RandomDiceRoller;
 
 import java.util.ArrayList;
 import java.util.HashMap;

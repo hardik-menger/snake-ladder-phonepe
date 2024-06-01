@@ -1,7 +1,7 @@
-package org.example.util.diceroller;
+package org.example.util.diceroller.impl;
 
 import org.example.strategy.movementstrategy.MovementStrategyContext;
-import org.example.util.diceroller.impl.DiceRoller;
+import org.example.util.diceroller.DiceRoller;
 
 import java.util.Random;
 
