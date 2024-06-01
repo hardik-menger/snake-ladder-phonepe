@@ -1,4 +1,4 @@
-package org.example.entity.boardelement;
+package org.example.entity.actionelements;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,7 +6,7 @@ import org.example.entity.Player;
 
 @Data
 @NoArgsConstructor
-public class Ladder implements BoardElement {
+public class Ladder implements ActionElement {
     private int top;
     private int bottom;
 

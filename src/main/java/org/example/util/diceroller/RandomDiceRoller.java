@@ -1,10 +1,11 @@
-package org.example.util;
+package org.example.util.diceroller;
 
 import org.example.strategy.movementstrategy.MovementStrategyContext;
+import org.example.util.diceroller.impl.DiceRoller;
 
 import java.util.Random;
 
-public class RandomDiceRoller {
+public class RandomDiceRoller implements DiceRoller {
     private final MovementStrategyContext movementStrategyContext;
     private final int numberOfDies;
     private final Random random;

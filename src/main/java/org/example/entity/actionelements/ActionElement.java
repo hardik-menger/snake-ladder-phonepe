@@ -1,8 +1,8 @@
-package org.example.entity.boardelement;
+package org.example.entity.actionelements;
 
 import org.example.entity.Player;
 
-public interface BoardElement {
+public interface ActionElement {
     int calculateJump(int position);
 
     void applyPunishMent(Player player);

@@ -1,20 +1,9 @@
 boardSize: 10
 numberOfSnakes: 9
 numberOfLadders: 8
-numberOfDies: 1
 movementStrategy: SUM
-crocodiles:
-  - 45
-  - 65
-  - 85
-mines:
-  - 5
-  - 10
-  - 15
-  - 25
-  - 26
-  - 28
-  - 29
+numberOfDies: 1
+
 snakes:
   62: 5
   33: 6
@@ -25,6 +14,7 @@ snakes:
   98: 64
   93: 73
   95: 75
+
 ladders:
   2: 37
   27: 46
@@ -34,8 +24,13 @@ ladders:
   65: 84
   71: 91
   81: 100
+
+crocodiles: [ ]
+
+mines: [ ]
+
 players:
   - name: Gaurav
-    position: 1
+    position: 0
   - name: Sagar
-    position: 1
+    position: 0

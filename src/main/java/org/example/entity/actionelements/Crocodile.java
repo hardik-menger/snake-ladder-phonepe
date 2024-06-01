@@ -1,4 +1,4 @@
-package org.example.entity.boardelement;
+package org.example.entity.actionelements;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import org.example.entity.Player;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Crocodile implements BoardElement {
+public class Crocodile implements ActionElement {
     private int position;
 
     @Override

@@ -1,4 +1,6 @@
-package org.example.strategy.movementstrategy;
+package org.example.strategy.movementstrategy.impl;
+
+import org.example.strategy.movementstrategy.MovementStrategy;
 
 import java.util.Arrays;
 

@@ -1,19 +1,23 @@
 package org.example.strategy.movementstrategy;
 
 import lombok.Getter;
+import org.example.strategy.movementstrategy.impl.MaxStrategy;
+import org.example.strategy.movementstrategy.impl.MinStrategy;
+import org.example.strategy.movementstrategy.impl.SumStrategy;
 
 @Getter
 public class MovementStrategyContext implements MovementStrategy {
     private MovementStrategy strategy;
 
-    private MovementStrategyContext(){}
+    private MovementStrategyContext() {
+    }
 
-    public MovementStrategyContext(String strategyType){
-        strategy=getMovementStrategy(strategyType);
+    public MovementStrategyContext(String strategyType) {
+        strategy = getMovementStrategy(strategyType);
     }
 
     public int calculateRoll(int[] diceRolls) {
-       return strategy.calculateRoll(diceRolls);
+        return strategy.calculateRoll(diceRolls);
     }
 
     private MovementStrategy getMovementStrategy(String strategyType) {

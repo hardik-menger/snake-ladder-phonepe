@@ -20,6 +20,11 @@ public class Player {
         this.turnsToBeSkipped = 0;
     }
 
+    public Player(String name, int position) {
+        this.name = name;
+        this.position = position;
+    }
+
     public boolean allowedToPlay() {
         if (turnsToBeSkipped == 0) return true;
         else {
