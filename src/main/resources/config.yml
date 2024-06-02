@@ -31,6 +31,6 @@ mines: [ ]
 
 players:
   - name: Gaurav
-    position: 0
+    position: 5
   - name: Sagar
-    position: 0
+    position: 23
