@@ -1,7 +1,7 @@
 boardSize: 10
 numberOfSnakes: 9
 numberOfLadders: 8
-movementStrategy: SUM
+movementStrategy: MAX
 numberOfDies: 1
 
 snakes:
@@ -31,6 +31,6 @@ mines: [ ]
 
 players:
   - name: Gaurav
-    position: 5
+    position: 0
   - name: Sagar
-    position: 23
+    position: 0

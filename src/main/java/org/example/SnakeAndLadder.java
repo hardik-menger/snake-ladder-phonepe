@@ -8,9 +8,7 @@ import org.example.entity.actionelements.impl.Crocodile;
 import org.example.entity.actionelements.impl.Ladder;
 import org.example.entity.actionelements.impl.Mine;
 import org.example.entity.actionelements.impl.Snake;
-import org.example.strategy.movementstrategy.MovementStrategyContext;
 import org.example.util.diceroller.DiceRoller;
-import org.example.util.diceroller.impl.RandomDiceRoller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,15 +24,6 @@ public class SnakeAndLadder {
     private final DiceRoller diceRoller;
     private final Map<Integer, ActionElement> boardElements = new HashMap<>();
     private final List<Player> players = new ArrayList<>();
-
-    public SnakeAndLadder(GameConfig config) throws IllegalArgumentException {
-        this.boardSize = config.boardSize;
-        this.diceRoller = new RandomDiceRoller(new MovementStrategyContext(config.movementStrategy), config.numberOfDies);
-        //use the diceRoller below to replicate the test cases mentioned in the document
-        //this.diceRoller = new FakeDiceRoller();
-        this.players.addAll(config.players);
-        initializeBoardElements(config);
-    }
 
     public SnakeAndLadder(GameConfig config, DiceRoller diceRoller) throws IllegalArgumentException {
         this.boardSize = config.boardSize;

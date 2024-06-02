@@ -3,6 +3,7 @@ package org.example;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.example.config.GameConfig;
+import org.example.util.diceroller.impl.FakeDiceRoller;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +13,8 @@ public class Main {
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             GameConfig config = mapper.readValue(new File("src/main/resources/config.yml"), GameConfig.class);
-            SnakeAndLadder game = new SnakeAndLadder(config);
+            SnakeAndLadder game = new SnakeAndLadder(config, new FakeDiceRoller());
+            // SnakeAndLadder game = new SnakeAndLadder(config, new RandomDiceRoller(new MovementStrategyContext(config.movementStrategy), config.numberOfDies));
             game.playGame();
         } catch (IOException e) {
             e.printStackTrace();
